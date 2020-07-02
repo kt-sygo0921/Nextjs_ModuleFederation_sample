@@ -12,7 +12,8 @@ module.exports = {
   },
   output: {
     publicPath: "http://localhost:3002/",
-    filename:"[name].js"
+    filename:"[name].js",
+    globalObject:"global"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
@@ -31,7 +32,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app2",
-      library: { type: "var", name: "app2" },
+      library: { type: "global", name: "app2" },
       filename: "remoteEntry.js",
       exposes: {
         UserList: "./src/UserList",

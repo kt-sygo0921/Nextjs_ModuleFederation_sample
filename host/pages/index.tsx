@@ -3,7 +3,9 @@ import Head from "next/head";
 
 import {DynamicWidget} from '../components/DynamicWidget';
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+    const {Component} = props;
+    console.log(Component)
     return (
         <>
             {/* <Head>
@@ -11,7 +13,7 @@ const IndexPage = () => {
             </Head> */}
 
             <p>うおおおおおおおおおおおおおおおおおお</p>
-            <DynamicWidget scope="app2" module="UserList" />
+            {/* <DynamicWidget scope="app2" module="UserList" /> */}
         </>
     )
 }
@@ -28,6 +30,7 @@ export const getServerSideProps = async() => {
     } catch (error) {
         console.log(error)
     }
+    console.log(global.app2.get('UserList'))
     if (!global[scope]) {
         return{
             props: {

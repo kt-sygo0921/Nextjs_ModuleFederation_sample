@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
         return (
             <html>
                 <Head>
-                    <script src="http://localhost:3002/remoteEntry.js"></script>
+                    {/* <script src="http://localhost:3002/remoteEntry.js"></script> */}
                 </Head>
                 <body>
                     <Main />
